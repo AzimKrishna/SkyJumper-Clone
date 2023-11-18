@@ -11,6 +11,17 @@
 </head>
 
 <body>
+    <div id="overlay">
+        <div class="honeycomb">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+    </div>
     <header>
         <div class="scroller">
             <span>We are available in : Gurugram • Delhi • Pune • Bangalore • Chandigarth • Noida • Chennai • Lucknow •
@@ -441,7 +452,12 @@
         </div>
     </footer>
 
-
+    <script>
+        window.addEventListener('load', function () {
+            // Hide the overlay when everything is loaded
+            document.getElementById('overlay').style.display = 'none';
+        });
+    </script>
 <script src="js/script.js"></script>
 </body>
 

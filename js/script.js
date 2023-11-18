@@ -67,13 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
     imageSlider.addEventListener("mouseout", () => slideInterval = setInterval(nextImage, 4000));
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const couponsHolder = document.getElementById("couponsHolder");
 
     function setupInfiniteScroll() {
         const cards = couponsHolder.querySelectorAll(".cards");
         const cardArray = Array.from(cards);
+        const cardWidth = cardArray[0].offsetWidth;
+
+        // Calculate the total width needed for infinite scrolling
+        const totalWidth = cardArray.length * cardWidth;
 
         // Clone the cards for infinite scrolling
         cardArray.forEach((card, index) => {
@@ -83,13 +86,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Function to move cards on scroll
         function moveCards() {
-            const scrollLeft = couponsHolder.scrollLeft;
+            let scrollLeft = couponsHolder.scrollLeft;
 
-            // Check if user has scrolled to the last set of cards
-            if (scrollLeft >= cardArray.length * cardArray[0].offsetWidth) {
-                couponsHolder.scrollLeft -= cardArray[0].offsetWidth;
-            } else if (scrollLeft === 0) {
-                couponsHolder.scrollLeft += cardArray.length * cardArray[0].offsetWidth;
+            // Check if user has scrolled past the total width
+            if (scrollLeft >= totalWidth) {
+                // Calculate the new scroll position after cycling
+                const newScrollLeft = scrollLeft - totalWidth;
+                
+                // Set the new scroll position without animation
+                couponsHolder.scrollLeft = newScrollLeft;
             }
         }
 
@@ -100,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check viewport width and apply infinite scroll only for the specified range
     function checkViewportWidth() {
         const viewportWidth = window.innerWidth;
-        if (viewportWidth >= 577 && viewportWidth <= 767) {
+        if (viewportWidth <= 767) {
             setupInfiniteScroll();
         }
     }
