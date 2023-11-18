@@ -730,7 +730,7 @@ nav .btn-holder a {
 .enquiry .wrapper2 .form-holder .form-img-holder button{
     max-width: 100%;
     min-width: 100%;
-    weight: 300;
+    font-weight: 300;
     background-color: var(--blue);
     color: var(--white);
     border: 1px solid var(--blue);
