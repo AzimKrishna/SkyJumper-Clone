@@ -21,7 +21,29 @@ html {
     --purple: #7C55CA;
     --blue: #3F49AC;
 }
+::-webkit-scrollbar {
+    width: 4px;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
+    border-radius: 6px;
+}
+
+/* Style for Firefox */
+* {
+    scrollbar-color: var(--purple) transparent;
+}
+
+/* Style for Edge and Internet Explorer */
+* {
+    -ms-overflow-style: none;
+}
+
+*::-ms-scrollbar-thumb {
+    background-color: var(--purple);
+    border-radius: 6px;
+}
 .wrapper {
     max-width: 98%;
     margin-right: auto;
@@ -57,6 +79,26 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
+}
+
+.scroller span{
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    animation: slide 50s linear infinite;
+    /* Adjust the duration and timing function as needed */
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(100%);
+        /* Initial position, off-screen to the right */
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* Final position, off-screen to the left */
+    }
 }
 
 /* css for the navigation bar */
@@ -136,6 +178,12 @@ nav .btn-holder a {
     z-index: 1;
     /* Ensure the content appears above the tint */
 }
+.hero-content img{
+    display: block;
+    object-fit: cover;
+    width: auto;
+}
+
 
 .video-player::before {
     content: "";
@@ -157,6 +205,7 @@ nav .btn-holder a {
     margin-top: -24.5vh;
     z-index: 100;
     position: relative;
+    margin-bottom: 30px;
 }
 
 .coupons-holder .cards {
@@ -191,6 +240,7 @@ nav .btn-holder a {
 
 .coupons-holder .cards .img-holder {
     width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -247,19 +297,50 @@ nav .btn-holder a {
 .booking-section-child .img-holder,
 .booking-section-child .form-holder {
     width: 50%;
-    background-color: white;
     border-radius: 15px;
 }
-
+.booking-section-child .form-holder{
+    background-color: var(--white);
+}
 .booking-section-child .img-holder {
-    height: 550px;
+    max-width: 550px;
     overflow: hidden;
+    position: relative;
+}
+.booking-section-child .img-holder .btn-holder{
+    position: absolute;
+    z-index: 100;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+}
+.booking-section-child .img-holder .btn-holder a{
+    font-size: 3rem;
+    color: var(--light-orange);
+    font-weight: 500;
+    text-shadow: 0 0 5px #00000096;
+    cursor: pointer;
 }
 
 .booking-section-child .img-holder img {
     width: 100%;
+    position: relative;
     height: 100%;
     border-radius: 15px;
+    transition: transform 0.5s ease-in-out;
+}
+.booking-section-child #imageSlider1 {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.booking-section-child #imageSlider1 img {
+    width: 100%;
+    height: auto;
 }
 
 .booking-section-child .form-holder {
@@ -346,16 +427,17 @@ nav .btn-holder a {
 .testimonials-holder {
     display: flex;
     gap: 0 30px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 .testimonials-holder .cards {
-    width: 390px;
+    max-width: 390px;
     border-radius: 0 0 20px 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 10px #0000003d;
+    flex: 1;
 
 }
 
@@ -495,7 +577,7 @@ nav .btn-holder a {
 
 .trampoline-benefits .wrapper2 .benefits-cards .cards img {
     width: 5.3125rem;
-    margin: 0 auto;
+    margin: 0 auto 25px;
     margin-bottom: 25px;
     display: block;
     height: auto;
@@ -580,6 +662,7 @@ nav .btn-holder a {
     font-weight: 400;
     line-height: 2;
     color: var(--white);
+    margin-bottom: 1.125rem;
 }
 .about-us .wrapper2 .img-holder img{
     height: 31.25rem;
@@ -623,16 +706,15 @@ nav .btn-holder a {
 .enquiry .wrapper2 .form-holder .form-img-holder{
     display: flex;
 }
-.enquiry .wrapper2 .form-holder .form-img-holder div{
-    padding: 0 24px;
-}
 .enquiry .wrapper2 .form-holder .form-img-holder .form{
     flex: 1;
     flex-basis: 50%;
+    padding-right: 24px;
 }
 .enquiry .wrapper2 .form-holder .form-img-holder .img-holder{
     flex: 1;
     flex-basis: 50%;
+    padding-left: 24px;
 }
 .enquiry .wrapper2 .form-holder .form-img-holder .img-holder img{
     height: auto;
@@ -698,4 +780,270 @@ footer .wrapper2{
 footer .wrapper2 a{
     color: var(--white);
     margin-left: 10px;
+}
+footer .wrapper2 .data{
+    display: flex;
+    justify-content: center;
+}
+footer .wrapper2 .social-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+/* media queries */
+
+/* Extra Small devices (phones) */
+@media (max-width: 576px) {
+    /* Styles for extra small screens */
+}
+
+/* Small devices (tablets) */
+@media (min-width: 577px) and (max-width: 767px) {
+    .scroller {
+        background: var(--orange);
+        height: 40px;
+        color: var(--white);
+        font-size: 0.875rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-content img{
+        height: 200px;
+    }
+
+    .coupons-holder {
+        gap: 0 20px;
+    }    
+    
+    .coupons-holder .cards{
+        flex: 1;
+    }
+    .coupons-holder .cards .img-holder {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .coupons-holder .cards .img-holder img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .coupons-holder .cards .text-holder p {
+        font-size: 1rem;
+    }
+    .coupons-holder .cards .text-holder h2 {
+        font-size: 1.625rem;
+        font-weight: 700;
+    }
+    .coupons-holder .cards .text-holder {
+        min-height: auto;
+    }
+    .coupons-holder .cards button {
+        font-size: 0.875rem;
+        padding: 6px 15px;
+        width: 100%;
+    }
+    .coupons-holder .cards a{
+        width: 95%;
+        margin: 2px 0;
+    }
+    .trampoline-benefits {
+        padding: 3.75rem 0;
+    }
+    .trampoline-benefits .benefits-jump-img {
+        width: 340px;
+        bottom: -125px;
+    }
+    
+    .trampoline-benefits .wrapper2 .benefits-cards >* {
+        flex: 0 0 33%;
+        margin-bottom: 25px;
+    }
+    .trampoline-benefits .wrapper2 .benefits-cards {
+        justify-content: flex-end;
+    }
+    .sneak-peak .wrapper2 .sneak-peak-cards .text-card h2{
+        font-size: 1.40rem;
+    }
+    .about-us .wrapper2 .text-holder h1{
+        line-height: 1;
+    }
+    .about-us .wrapper2 .img-holder img{
+        height: auto;
+        width: 100%;
+    }
+    .enquiry .wrapper2 .form-holder .text-holder h2{
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .enquiry .wrapper2 .form-holder .form-img-holder .img-holder{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    footer{
+        padding: 16px 0;
+    }
+    footer .wrapper2{
+        flex-direction: column;
+    }
+
+}
+
+/* Medium devices (laptops, desktops) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .coupons-holder {
+        gap: 0 20px;
+    }    
+    
+    .coupons-holder .cards{
+        flex: 1;
+    }
+    .coupons-holder .cards .img-holder {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .coupons-holder .cards .img-holder img {
+        width: 100%;
+        height: 100%;
+    }
+    .sneak-peak .wrapper2 .sneak-peak-cards .text-card h2{
+        font-size: 1.40rem;
+    }
+    .hero-content img{
+        height: 200px;
+    }
+    .coupons-holder .cards .text-holder p {
+        font-size: 1rem;
+    }
+    .coupons-holder .cards .text-holder h2 {
+        font-size: 1.625rem;
+        font-weight: 700;
+    }
+    .coupons-holder .cards .text-holder {
+        min-height: auto;
+    }
+    .coupons-holder .cards button {
+        font-size: 0.875rem;
+        padding: 6px 15px;
+        width: 100%;
+    }
+    .coupons-holder .cards a{
+        width: 95%;
+        margin: 2px 0;
+    }
+    .trampoline-benefits {
+        padding: 3.75rem 0;
+    }
+    .trampoline-benefits .benefits-jump-img {
+        width: 340px;
+        bottom: -125px;
+    }
+    
+    .trampoline-benefits .wrapper2 .benefits-cards >* {
+        flex: 0 0 33%;
+        margin-bottom: 25px;
+    }
+    .trampoline-benefits .wrapper2 .benefits-cards {
+        justify-content: flex-end;
+    }
+    .about-us .wrapper2 .text-holder h1{
+        line-height: 1;
+    }
+    .enquiry .wrapper2 .form-holder .text-holder h2{
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    .about-us .wrapper2 .img-holder img{
+        height: auto;
+        width: 100%;
+    }
+    .enquiry .wrapper2 .form-holder .form-img-holder .img-holder{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    footer{
+        padding: 16px 0;
+    }
+
+}
+
+/* Large devices (large desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .coupons-holder {
+        gap: 0 30px;
+    }    
+    .sneak-peak .wrapper2 .sneak-peak-cards .text-card h2{
+        font-size: 1.75rem;
+    }
+    .hero-content img{
+        height: 200px;
+    }
+    .coupons-holder .cards .text-holder p {
+        font-size: 1rem;
+    }
+    .coupons-holder .cards .text-holder h2 {
+        font-size: 1.625rem;
+        font-weight: 700;
+    }
+    .coupons-holder .cards .text-holder {
+        min-height: auto;
+    }
+    .coupons-holder .cards button {
+        font-size: 0.875rem;
+        padding: 6px 15px;
+        width: 100%;
+    }
+    .coupons-holder .cards a{
+        width: 95%;
+        margin: 2px 0;
+    }
+    .trampoline-benefits {
+        padding: 3.75rem 0;
+    }
+    .trampoline-benefits .benefits-jump-img {
+        width: 340px;
+        bottom: -125px;
+    }
+    
+    .trampoline-benefits .wrapper2 .benefits-cards >* {
+        flex: 0 0 33%;
+        margin-bottom: 25px;
+    }
+    .trampoline-benefits .wrapper2 .benefits-cards {
+        justify-content: flex-end;
+    }
+    .about-us .wrapper2 .text-holder h1{
+        line-height: 1;
+    }
+    .enquiry .wrapper2 .form-holder .text-holder h2{
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    .about-us .wrapper2 .img-holder img{
+        height: auto;
+        width: 100%;
+    }
+
+}
+
+/* Extra Large devices (extra large desktops) */
+@media (min-width: 1200px) {
+    .coupons-holder {
+        gap: 0 30px;
+    }
+    .sneak-peak .wrapper2 .sneak-peak-cards .text-card h2{
+        font-size: 1.75rem;
+    }
+    
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
     <title>Skyjumper Trampoline Park Booking</title>
 </head>
@@ -12,9 +13,9 @@
 <body>
     <header>
         <div class="scroller">
-            <p>We are available in : Gurugram • Delhi • Pune • Bangalore • Chandigarth • Noida • Chennai • Lucknow •
+            <span>We are available in : Gurugram • Delhi • Pune • Bangalore • Chandigarth • Noida • Chennai • Lucknow •
                 Ahmedabad • Jalandhar We are available in : Gurugram • Delhi • Pune • Bangalore • Chandigarth • Noida •
-                Chennai • Lucknow • Ahmedabad • Jalandhar</p>
+                Chennai • Lucknow • Ahmedabad • Jalandhar</span>
         </div>
 
         <nav>
@@ -23,10 +24,10 @@
                     <img src="img/logo.webp" alt="">
                 </div>
                 <div class="btn-holder">
-                    <a href="#id">
+                    <a href="#booking-section">
                         <button class="btn-primary">Buy Ticket</button>
                     </a>
-                    <a href="">
+                    <a href="#enquiry">
                         <button class="btn-secondary">Birthday Enquiry</button>
                     </a>
                 </div>
@@ -42,7 +43,6 @@
                     <source
                         src="https://booking.skyjumpertrampolinepark.com/wp-content/uploads/2023/11/herobannervideo-1.mp4"
                         type="video/mp4">
-                    Your browser does not support HTML5 video.
                 </video>
                 <div class="hero-content">
                     <img src="img/hero-text.webp" alt="">
@@ -57,7 +57,10 @@
                 <div class="text-holder">
                     <p>Group of 10</p>
                     <h2>20% OFF</h2>
-                    <button class="btn-primary  ">BOOK NOW</button>
+                    <a href="#booking-section">
+
+                        <button class="btn-primary  ">BOOK NOW</button>
+                    </a>
                 </div>
                 <div class="img-holder">
                     <img src="img/coupon4.webp" alt="">
@@ -65,29 +68,38 @@
             </div>
             <div class="cards">
                 <div class="text-holder">
-                    <p>Group of 10</p>
-                    <h2>20% OFF</h2>
-                    <button class="btn-primary  ">BOOK NOW</button>
+                    <p>Group of 5</p>
+                    <h2>10% OFF</h2>
+                    <a href="#booking-section">
+                        
+                        <button class="btn-primary  ">BOOK NOW</button>
+                    </a>
                 </div>
                 <div class="img-holder">
-                    <img src="img/coupon3.webp" alt="">
+                    <img src="img/group-of-5.webp" alt="">
                 </div>
             </div>
             <div class="cards">
                 <div class="text-holder">
-                    <p>Group of 10</p>
-                    <h2>20% OFF</h2>
-                    <button class="btn-primary  ">BOOK NOW</button>
+                    <p>Group of 3</p>
+                    <h2>10% OFF</h2>
+                    <a href="#booking-section">
+                        
+                        <button class="btn-primary  ">BOOK NOW</button>
+                    </a>
                 </div>
                 <div class="img-holder">
-                    <img src="img/coupon2.webp" alt="">
+                    <img src="img/group-of-3.webp" alt="">
                 </div>
             </div>
             <div class="cards">
                 <div class="text-holder">
-                    <p>Group of 10</p>
-                    <h2>20% OFF</h2>
-                    <button class="btn-primary  ">BOOK NOW</button>
+                    <p>Single ticekt</p>
+                    <h2>5% OFF</h2>
+                    <a href="#booking-section">
+                        
+                        <button class="btn-primary  ">BOOK NOW</button>
+                    </a>
                 </div>
                 <div class="img-holder">
                     <img src="img/coupon1.webp" alt="">
@@ -96,15 +108,21 @@
 
         </section>
 
-        <section class="booking-section">
+        <section class="booking-section" id="booking-section">
             <div class="wrapper2">
                 <div class="booking-section-child">
                     <div class="text-holder">
                         <h1>BUY TICKET ONLINE</h1>
                     </div>
                     <div class="img-form-holder">
-                        <div class="img-holder">
-                            <img src="img/gallery1.webp" alt="">
+                        <div class="img-holder" >
+                            <div id="imageSlider1">
+
+                            </div>
+                            <div class="btn-holder">
+                                <a id="prevBtnBooking">&lt;</a>
+                                <a id="nextBtnBooking">&gt;</a>
+                            </div>
                         </div>
                         <div class="form-holder">
                             <form>
@@ -365,7 +383,6 @@
                     <p>
                         Dive into the ultimate family fun zone at SkyJumper Trampoline Park! It's not just an amusement park but a fusion of fitness, sports, and thrills. Perfect for birthday bashes, school outings, corporate get-togethers, or any lively gathering. 
                     </p>
-                    <br>
                     <p>
                         Unleash your inner Superman, bounce off walls, soar high, and enjoy with your loved ones on a sprawling playground of top-notch trampolines. Whether you're 3 or 93, we've got a special spot just for you. Come, jump in on the fun!
                     </p>
@@ -377,7 +394,7 @@
         </section>
 
 
-        <section class="enquiry">
+        <section class="enquiry" id="enquiry">
             <div class="wrapper2">
                 <div class="form-holder">
                     <div class="text-holder">
@@ -411,16 +428,21 @@
 
     <footer>
         <div class="wrapper2">
-            <p class="copyrigt-text">
-                © 2023. Skyjumpertrampolinepark. 
-            </p>
-            <a href="https://skyjumpertrampolinepark.com/Privacy">Privacy Policy</a>
+            <div class="data">
+                <p class="copyrigt-text">
+                    © 2023. Skyjumpertrampolinepark. 
+                </p>
+                <a href="https://skyjumpertrampolinepark.com/Privacy">Privacy Policy</a>
+            </div>
             <div class="social-holder">
-                
+                <a href="https://www.facebook.com/SkyjumperTrampolineParkOfficial" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/skyjumpertpofficial/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i class='bx bxl-instagram' ></i></a>
             </div>
         </div>
     </footer>
 
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
