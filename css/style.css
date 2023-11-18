@@ -10,27 +10,33 @@
 html {
     scroll-behavior: smooth;
 }
+
 :root {
-    --orange:  #EC623C;
+    --orange: #EC623C;
+    --light-orange: #F0852D;
     --white: #fff;
+    --offwhite: #F3F6F4;
     --yellow: #FEDD3F;
     --black: #000;
+    --purple: #7C55CA;
+    --blue: #3F49AC;
 }
 
-.wrapper{
+.wrapper {
     max-width: 98%;
     margin-right: auto;
     margin-left: auto;
     padding-left: 20px;
     padding-right: 20px;
 }
-.wrapper2{
+
+.wrapper2 {
     max-width: 1280px;
     padding: 0 24px;
     margin: 0 auto;
 }
 
-header{
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,8 +45,9 @@ header{
     background: #00000000;
     z-index: 10;
 }
+
 /* css for the topmost information scroller */
-.scroller{
+.scroller {
     background: var(--orange);
     height: 40px;
     color: var(--white);
@@ -51,19 +58,22 @@ header{
     justify-content: center;
     position: relative;
 }
+
 /* css for the navigation bar */
 
-nav .wrapper{
+nav .wrapper {
     display: flex;
     padding: 6px;
     justify-content: space-between;
     align-items: center;
 }
-.logo-holder img{
+
+.logo-holder img {
     max-height: 100px;
     width: auto;
 }
-nav .btn-holder button{
+
+nav .btn-holder button {
     padding: 8px 25px;
     border-radius: 30px;
     font-weight: 600;
@@ -75,22 +85,27 @@ nav .btn-holder button{
     margin-left: 15px;
     border: 0px none;
 }
-nav .btn-holder a{
+
+nav .btn-holder a {
     text-decoration: none;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: var(--yellow);
     color: var(--black);
 }
-.btn-secondary{
+
+.btn-secondary {
     background-color: var(--orange);
     color: var(--white);
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     color: var(--white);
     background-color: var(--orange);
 }
-.btn-secondary:hover{
+
+.btn-secondary:hover {
     color: var(--black);
     background-color: var(--yellow);
 }
@@ -118,8 +133,10 @@ nav .btn-holder a{
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    z-index: 1; /* Ensure the content appears above the tint */
+    z-index: 1;
+    /* Ensure the content appears above the tint */
 }
+
 .video-player::before {
     content: "";
     position: absolute;
@@ -127,28 +144,30 @@ nav .btn-holder a{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(128, 0, 128, 0.5); /* Purple tint color with 50% opacity */
-    z-index: 0; /* Place the overlay behind the video */
+    background: rgba(128, 0, 128, 0.5);
+    /* Purple tint color with 50% opacity */
+    z-index: 0;
+    /* Place the overlay behind the video */
 }
 
 /* css for coupon cards */
-.coupons-holder{
-    padding: 5px;
+.coupons-holder {
     display: flex;
-    gap: 0 25px;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: -24.5vh;
     z-index: 100;
     position: relative;
 }
-.cards{
+
+.coupons-holder .cards {
     max-width: 290px;
     border-radius: 20px;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
-.coupons-holder .cards .text-holder{
+
+.coupons-holder .cards .text-holder {
     background-color: var(--white);
     color: var(--black);
     min-height: 150px;
@@ -159,25 +178,30 @@ nav .btn-holder a{
     align-items: center;
     justify-content: center;
 }
-.coupons-holder .cards .text-holder p{
+
+.coupons-holder .cards .text-holder p {
     font-size: 1.25rem;
     font-weight: 500;
 }
-.coupons-holder .cards .text-holder h2{
+
+.coupons-holder .cards .text-holder h2 {
     font-size: 2.2rem;
     margin-bottom: 4px;
 }
-.coupons-holder .cards .img-holder{
+
+.coupons-holder .cards .img-holder {
     width: 100%;
     overflow: hidden;
 }
-.coupons-holder .cards .img-holder img{
+
+.coupons-holder .cards .img-holder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0 0 20px 20px;
 }
-.coupons-holder .cards button{
+
+.coupons-holder .cards button {
     padding: 6px 20px;
     border-radius: 25px;
     font-weight: 400;
@@ -192,38 +216,486 @@ nav .btn-holder a{
 
 /* css for booking section  */
 
-.booking-section{
+.booking-section {
     margin: 50px 0;
-    height: 400px;
 }
-.booking-section .booking-section-child{
-    background: linear-gradient(91deg,#5602c1 1.6%,#8f0bf7);
+
+.booking-section .booking-section-child {
+    background: linear-gradient(91deg, #5602c1 1.6%, #8f0bf7);
     padding: 40px;
     border-radius: 25px;
 }
-.booking-section-child .text-holder{
+
+.booking-section-child .text-holder {
     color: var(--white);
     text-align: center;
-    margin: 0 0 20px 0;
+    margin-bottom: 40px;
 }
-.booking-section-child .img-form-holder{    
+
+.booking-section-child .img-form-holder {
     display: flex;
     gap: 0 40px;
 }
-.booking-section-child .text-holder h1{
+
+.booking-section-child .text-holder h1 {
     font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 5px #00000024;
 }
-.booking-section-child .img-holder, .booking-section-child .form-holder{
+
+.booking-section-child .img-holder,
+.booking-section-child .form-holder {
     width: 50%;
     background-color: white;
     border-radius: 15px;
 }
-.booking-section-child .img-holder{
+
+.booking-section-child .img-holder {
     height: 550px;
     overflow: hidden;
 }
-.booking-section-child .img-holder img{
+
+.booking-section-child .img-holder img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+}
+
+.booking-section-child .form-holder {
+    padding: 30px;
+}
+
+.booking-section-child .form-holder label {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.booking-section-child .form-holder select {
+    width: 90%;
+    font-size: 1.1rem;
+    padding: 6px 8px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.booking-section-child .form-holder .radio-label {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 5px;
+    background: #459bd7;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.booking-section-child .form-holder .radio-label:hover {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+.booking-section-child .form-holder input[type="radio"] {
+    display: none;
+    /* Hide the actual radio buttons */
+}
+
+.booking-section-child .form-holder input[type="radio"]:checked+.radio-label {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+/* css for testimonials section */
+.testimonials {
+    background: var(--offwhite);
+    padding: 40px 0;
+}
+
+.testimonials .wrapper2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonials .text-holder h1 {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+}
+
+.testimonials .logo-holder {
+    margin-bottom: 35px;
+}
+
+.testimonials .logo-holder img {
+    width: 80px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials .text-holder {
+    margin-bottom: 35px;
+}
+
+.testimonials-holder {
+    display: flex;
+    gap: 0 30px;
+    margin-bottom: 15px;
+}
+
+.testimonials-holder .cards {
+    width: 390px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px #0000003d;
+
+}
+
+.testimonials-holder .img-holder {
+    position: relative;
+}
+
+.testimonials-holder .img-holder img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.testimonials-holder .img-holder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #7a51becf, transparent);
+
+}
+
+.testimonials-holder .img-holder .commas {
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonials-holder .img-holder .commas img {
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+.testimonials-holder .text-holder {
+    height: 100%;
+    padding: 50px 20px 20px 20px;
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: 5px 5px 10px #0000003d;
+    margin-bottom: 0px;
+}
+
+.testimonials-holder .text-holder .testimonial-name {
+    color: var(--orange);
+    font-size: 1.25rem;
+    margin: 0 0 15px 0;
+}
+
+.testimonials-holder .text-holder .testimonial-review {
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--black);
+}
+
+.testimonials-holder .text-holder .testimonial-stars svg {
+    height: 25px;
+    width: 110px;
+}
+
+/* css for trampoline benefits section */
+.trampoline-benefits {
+    padding: 7.5rem 0;
+    position: relative;
+}
+
+.trampoline-benefits::before {
+    content: "";
+    background: #9a99995c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.trampoline-benefits .benefits-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trampoline-benefits .benefits-jump-img {
+    position: absolute;
+    width: 420px;
+    z-index: 99;
+}
+
+.trampoline-benefits .wrapper2 {
+    position: relative;
+    z-index: 999;
+}
+
+.trampoline-benefits .wrapper2 .benefits-container {
+    padding-left: 30%;
+}
+
+.trampoline-benefits .wrapper2 .benefits-container h2 {
+    color: var(--white);
+    text-align: right;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00000096;
+    line-height: 1;
+}
+
+.trampoline-benefits .wrapper2 .benefits-container .secondary {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.trampoline-benefits .wrapper2 .benefits-container .primary {
+    font-size: 3.75rem;
+    margin-bottom: 50px;
+    display: block;
+}
+
+.trampoline-benefits .wrapper2 .benefits-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.trampoline-benefits .wrapper2 .benefits-cards .cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.trampoline-benefits .wrapper2 .benefits-cards .cards img {
+    width: 5.3125rem;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    display: block;
+    height: auto;
+}
+
+.trampoline-benefits .wrapper2 .benefits-cards .cards p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    text-align: center;
+}
+
+/* css for sneak peak */
+
+.sneak-peak {
+    background-color: var(--white);
+    /* height: 500px; */
+}
+.sneak-peak .wrapper2{
+    margin-top: 7.5rem;
+    /* margin-bottom: 7.5rem; */
+}
+.sneak-peak .wrapper2 .sneak-peak-cards {
+    display: flex;
+    gap: 0 30px;
+}
+.sneak-peak .wrapper2 .sneak-peak-cards .cards {
+    box-shadow: 5px 5px 10px #0000008c;
+    border-radius: 30px;
+    flex: 1;
+}
+.sneak-peak .wrapper2 .sneak-peak-cards .text-card {
+    border-radius: 30px;
+    text-align: center;
+    background: var(--purple);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.sneak-peak .wrapper2 .sneak-peak-cards .cards .sneak-video {
+    border-radius: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sneak-peak .wrapper2 .sneak-peak-cards .cards .sneak-video video{
+    object-fit: cover;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+/* css for about us */
+.about-us{
+    background: linear-gradient(104.39deg,#1f87ec 3.92%,#29c2c2 81.45%);
+    margin: 60px 0;
+    padding: 40px 0;
+}
+.about-us .wrapper2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-us .wrapper2 div{
+    width: 50%;
+}
+.about-us .wrapper2 .text-holder{
+    padding-right: 20px;
+}
+.about-us .wrapper2 .text-holder h1{
+    font-size: 3.125rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 5px #0000006b;
+    color: var(--white);
+}
+.about-us .wrapper2 .text-holder p{
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 2;
+    color: var(--white);
+}
+.about-us .wrapper2 .img-holder img{
+    height: 31.25rem;
+    width: auto;
+    float: right;
+}
+
+/* css for enquiry section */
+.enquiry{
+    margin-bottom: 60px;
+}
+.enquiry .wrapper2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.enquiry .wrapper2 .form-holder{
+    background: #F6F5F5;
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 5px 2px 10px #00000061;
+    width: 100%;
+    height: 100%;
+}
+.enquiry .wrapper2 .form-holder .text-holder{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.enquiry .wrapper2 .form-holder .text-holder h2{
+    color: var(--blue);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    line-height: 1;
+    font-size: 2.2rem;
+}
+.enquiry .wrapper2 .form-holder .text-holder p{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: grey;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder{
+    display: flex;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder div{
+    padding: 0 24px;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder .form{
+    flex: 1;
+    flex-basis: 50%;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder .img-holder{
+    flex: 1;
+    flex-basis: 50%;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder .img-holder img{
+    height: auto;
+    width: 100%;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder h2{
+    margin-bottom: 20px;
+    
+}
+.enquiry .wrapper2 .form-holder .form-img-holder h2 a {
+    color: var(--light-orange);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+  
+}
+.enquiry .wrapper2 .form-holder .form-img-holder input,
+.enquiry .wrapper2 .form-holder .form-img-holder textarea{
+    font-weight: 300;
+    min-width: 100%;
+    border: 1px solid var(--blue);
+    font-size: 1rem;
+    height: 35px;
+    color: var(--blue);
+    background: 0 0;
+    box-shadow: none;
+    padding: 5px 10px;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder textarea{
+    margin-bottom: 20px;
+    height: 80px;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder button{
+    max-width: 100%;
+    min-width: 100%;
+    font-weight: 300;
+    background-color: var(--blue);
+    color: var(--white);
+    border: 1px solid var(--blue);
+    font-size: 1rem;
+    height: 40px;
+    transition: all .2s;
+    cursor: pointer;
+}
+.enquiry .wrapper2 .form-holder .form-img-holder button:hover{
+    background-color: var(--purple);
+}
+
+/* css for footer section */
+footer{
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 20px 0;
+}
+footer .wrapper2{
+    display: flex;
+    font-size: 1.125rem;
+    align-items: center;
+    justify-content: center;
+}
+footer .wrapper2 a{
+    color: var(--white);
+    margin-left: 10px;
 }
