@@ -66,3 +66,46 @@ document.addEventListener("DOMContentLoaded", function () {
     imageSlider.addEventListener("mouseover", () => clearInterval(slideInterval));
     imageSlider.addEventListener("mouseout", () => slideInterval = setInterval(nextImage, 4000));
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const couponsHolder = document.getElementById("couponsHolder");
+
+    function setupInfiniteScroll() {
+        const cards = couponsHolder.querySelectorAll(".cards");
+        const cardArray = Array.from(cards);
+
+        // Clone the cards for infinite scrolling
+        cardArray.forEach((card, index) => {
+            const clone = card.cloneNode(true);
+            couponsHolder.appendChild(clone);
+        });
+
+        // Function to move cards on scroll
+        function moveCards() {
+            const scrollLeft = couponsHolder.scrollLeft;
+
+            // Check if user has scrolled to the last set of cards
+            if (scrollLeft >= cardArray.length * cardArray[0].offsetWidth) {
+                couponsHolder.scrollLeft -= cardArray[0].offsetWidth;
+            } else if (scrollLeft === 0) {
+                couponsHolder.scrollLeft += cardArray.length * cardArray[0].offsetWidth;
+            }
+        }
+
+        // Set up event listener for scroll
+        couponsHolder.addEventListener("scroll", moveCards);
+    }
+
+    // Check viewport width and apply infinite scroll only for the specified range
+    function checkViewportWidth() {
+        const viewportWidth = window.innerWidth;
+        if (viewportWidth >= 577 && viewportWidth <= 767) {
+            setupInfiniteScroll();
+        }
+    }
+
+    // Call the function initially and add a resize event listener
+    checkViewportWidth();
+    window.addEventListener("resize", checkViewportWidth);
+});
