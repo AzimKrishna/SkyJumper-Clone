@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Image paths
     const imagePaths = [
-        "../img/gallery1.webp",
-        "../img/gallery2.webp",
-        "../img/gallery3.webp",
-        "../img/gallery4.webp"
+        "/img/gallery1.webp",
+        "/img/gallery2.webp",
+        "/img/gallery3.webp",
+        "/img/gallery4.webp"
     ];
 
     // Get the image slider container
