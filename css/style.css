@@ -712,7 +712,7 @@ nav .btn-holder a {
 .enquiry .wrapper2 .form-holder .form-img-holder input,
 .enquiry .wrapper2 .form-holder .form-img-holder textarea{
     font-weight: 300;
-    min-width: 100%;
+    width: 100%;
     border: 1px solid var(--blue);
     font-size: 1rem;
     height: 35px;
@@ -730,7 +730,7 @@ nav .btn-holder a {
 .enquiry .wrapper2 .form-holder .form-img-holder button{
     max-width: 100%;
     min-width: 100%;
-    font-weight: 300;
+    weight: 300;
     background-color: var(--blue);
     color: var(--white);
     border: 1px solid var(--blue);
