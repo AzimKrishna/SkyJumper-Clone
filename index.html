@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
     <title>Skyjumper Trampoline Park Booking</title>
 </head>
@@ -449,12 +450,14 @@
                     <div class="form-img-holder">
                         <div class="form">
                             <h2><a href="tel:8882288001">+91-888 2288 001</a></h2>
-                            <form>
-                                <input type="text" name="name" id="name" placeholder="NAME">
-                                <input type="tel" name="phone" id="phone" placeholder="PHONE">
-                                <input type="email" name="email" id="email" placeholder="EMAIL">
-                                <textarea name="message" id="message" placeholder="ADD MESSAGE HERE"></textarea>
-                                <button type="submit">Submit</button>
+                            <form action="" method="post" name="enq-form" id="enq-form">
+                                <input type="text" name="Full Name" id="name" placeholder="NAME" required pattern="[A-Za-z ]+"
+                                title="Only letters and spaces are allowed">
+                                <input type="tel" name="Phone No" id="phone" placeholder="+91 XXXXXXXXXXX"
+                                required pattern="\+[0-9]+">
+                                <input type="email" name="Email" id="email" placeholder="EMAIL" required>
+                                <textarea name="Message" id="message" placeholder="ADD MESSAGE HERE" required></textarea>
+                                <button type="submit" id="submitBtn">Submit</button>
                             </form>
                         </div>
                         <div class="img-holder">

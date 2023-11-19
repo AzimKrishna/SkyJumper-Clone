@@ -194,3 +194,120 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }).mount();
 });
+
+
+
+// start map function
+var enquiryScriptURL = 'https://script.google.com/macros/s/AKfycbwk3w77lzqvXf-DJHAzIr7ff7eHLw6R0WubhqETxLAX0-CbBbvQGd3FtOjdnR0pgNyGKg/exec';
+
+
+function submitForm(form, successMessage, googeScriptURL) {
+    // Add current date and time to the form data
+    var formData = new FormData(form);
+    var currentDate = new Date();
+    formData.append('TimeStamp', currentDate.toLocaleString());
+
+    showLoader();
+
+    fetch(googeScriptURL, { method: 'POST', body: formData })
+        .then(response => response.json())
+        .then(data => {
+            hideLoader();
+            if (data.result == 'success') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: successMessage,
+                });
+                form.reset();
+                resetBorderColors(form);
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Oops, something went wrong. Please try again later.',
+                });
+            }
+        })
+        .catch(error => {
+            hideLoader();
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'Oops, something went wrong. Please try again later.',
+            });
+
+            console.error('Error!', error.message);
+        });
+}
+
+function resetBorderColors(form) {
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.style.borderColor = '#ccc';
+        input.style.outlineColor = '#ccc';
+    });
+}
+
+function setupFormValidation(form, scriptURL, successMessage) {
+    // Function to check if an input is valid
+    function isValidInput(input) {
+        return input.checkValidity();
+    }
+    var inputs = form.querySelectorAll('input[required]');
+    // Function to check all inputs and enable/disable submit button
+    function validateForm() {
+        let isValidForm = true;
+
+        inputs.forEach(input => {
+            if (!isValidInput(input)) {
+                isValidForm = false;
+                input.style.borderColor = '#bd3135';
+                input.style.outlineColor = '#bd3135';
+            } else {
+                input.style.borderColor = '#2ec97e';
+                input.style.outlineColor = '#2ec97e';
+            }
+        });
+
+    }
+
+
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            validateForm();
+        });
+    });
+
+    // Submit form function
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const isValid = Array.from(inputs).every(isValidInput);
+        if (isValid) {
+            submitForm(form, successMessage, scriptURL);
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'Please fill the form correctly in the highlighted sections.',
+            });
+        }
+    });
+}
+
+// Example usage for form1
+var form1 = document.getElementById('enq-form');
+if (form1) {
+    setupFormValidation(form1, enquiryScriptURL, 'Thank you! Your enquiry request has been sent successfully.');
+}
+
+function showLoader(){
+    var overlay = document.getElementById('overlay');
+    overlay.style.backgroundColor = 'rgba(236, 98, 60, 0.95)';
+    overlay.style.display = 'flex';
+}
+function hideLoader(){
+    document.getElementById('overlay').style.display = 'none';
+}
