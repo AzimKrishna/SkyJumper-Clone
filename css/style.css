@@ -191,7 +191,12 @@ header {
     position: relative;
     overflow: hidden;
 }
-
+.gld_slide{
+    display: flex;
+}
+.gld2_slide{
+    display: flex;
+}
 .scroller span{
     white-space: nowrap;
     /* Prevent text from wrapping */
@@ -323,6 +328,7 @@ nav .btn-holder a {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .coupons-holder-slider{
@@ -517,13 +523,36 @@ nav .btn-holder a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* overflow: hidden; */
 }
-
+.testimonials .glide3{
+    overflow: hidden;
+    width: 100%;
+}
+.gld3_track{
+    position: relative;
+}
 .testimonials .text-holder h1 {
     font-size: 2.8rem;
     letter-spacing: 3px;
 }
+.testimonials .glide__arrows{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+.testimonials .glide__arrows a{
+    font-size: 2.5rem;
+    color: var(--light-orange);
+    font-weight: 400;
+    text-shadow: 0 0 5px #00000096;
+    cursor: pointer;
+}
 .testimonials .logo-holder {
     margin-bottom: 35px;
 }
@@ -540,7 +569,7 @@ nav .btn-holder a {
 
 .testimonials-holder {
     display: flex;
-    gap: 0 30px;
+    /* gap: 0 30px; */
     margin-bottom: 40px;
 }
 
@@ -1012,8 +1041,11 @@ footer .wrapper2 .social-holder{
     /* .coupons-holder .cards:not(:last-child) {
     margin-right: 10px;
 } */
-    .glide__slide{
+    .gld_slide{
         display: flex;
+        justify-content: center;
+    }
+    .gld2_slide{
         justify-content: center;
     }
     .coupons-holder .cards .img-holder {
@@ -1094,15 +1126,17 @@ footer .wrapper2 .social-holder{
     }
     .testimonials-holder {
         justify-content: space-between;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        /* overflow-x: auto;
+        scroll-snap-type: x mandatory; */
+        /* overflow: hidden; */
         margin-bottom: 20px;
     }
     .testimonials-holder .cards {
         max-width: 390px;
         flex: 0 0 100%;
-        scroll-snap-align: start;
+        /* scroll-snap-align: start; */
         margin-bottom: 40px;
+        flex: 1;
     }
 
     .trampoline-benefits {
@@ -1339,7 +1373,7 @@ footer .wrapper2 .social-holder{
         scroll-snap-type: x mandatory; */
         margin-bottom: 60px;
     }    
-    .glide__slide{
+    .gld_slide{
         display: flex;
         justify-content: center;
     }
@@ -1428,8 +1462,9 @@ footer .wrapper2 .social-holder{
     }
     .testimonials-holder {
         justify-content: space-between;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        /* overflow-x: auto;
+        scroll-snap-type: x mandatory; */
+        /* overflow: hidden; */
         margin-bottom: 20px;
         position: relative;
         z-index: 999;
@@ -1440,8 +1475,9 @@ footer .wrapper2 .social-holder{
     .testimonials-holder .cards {
         max-width: 390px;
         flex: 0 0 100%;
-        scroll-snap-align: start;
+        /* scroll-snap-align: start; */
         margin-bottom: 40px;
+        flex: 1;
     }
 
     .trampoline-benefits {
