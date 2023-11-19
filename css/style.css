@@ -310,14 +310,13 @@ nav .btn-holder a {
 
 /* css for coupon cards */
 .coupons-holder {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
     margin-top: -24.5vh;
     z-index: 100;
     position: relative;
     margin-bottom: 30px;
 }
-
 .coupons-holder .cards {
     max-width: 290px;
     border-radius: 20px;
@@ -326,6 +325,11 @@ nav .btn-holder a {
     flex-direction: column;
 }
 
+.coupons-holder-slider{
+    display: flex;
+    justify-content: space-between;
+    gap: 0 20px;
+}
 .coupons-holder .cards .text-holder {
     background-color: var(--white);
     color: var(--black);
@@ -492,12 +496,12 @@ nav .btn-holder a {
     background-color: var(--orange);
 }
 
-.booking-section-child .form-holder input[type="radio"] {
+.booking-section-child .form-holder .radio-slot {
     display: none;
     /* Hide the actual radio buttons */
 }
 
-.booking-section-child .form-holder input[type="radio"]:checked+.radio-label {
+.booking-section-child .form-holder .radio-slot:checked + .radio-label {
     color: var(--white);
     background-color: var(--orange);
 }
@@ -990,17 +994,17 @@ footer .wrapper2 .social-holder{
     }
 
     .coupons-holder {
-        gap: 0 20px;
+        overflow: hidden;
         margin-top: 0;
-        overflow: auto;
-        scroll-snap-type: x mandatory;
+        /* overflow: auto; */
+        /* scroll-snap-type: x mandatory; */
         margin-bottom: 30px;
     }    
     
     .coupons-holder .cards{
         border: 1px solid #d1d1d1;
         flex: 0 0 100%;
-        scroll-snap-align: start;
+        /* scroll-snap-align: start; */
         max-width: 424px;
         margin-bottom: 30px;
     }
@@ -1008,6 +1012,10 @@ footer .wrapper2 .social-holder{
     /* .coupons-holder .cards:not(:last-child) {
     margin-right: 10px;
 } */
+    .glide__slide{
+        display: flex;
+        justify-content: center;
+    }
     .coupons-holder .cards .img-holder {
         width: 100%;
         height: 100%;
@@ -1239,6 +1247,7 @@ footer .wrapper2 .social-holder{
 
 /* Small devices (tablets) */
 @media (min-width: 577px) and (max-width: 767px) {
+    
     .scroller {
         height: auto;
         width: 100%;
@@ -1323,17 +1332,21 @@ footer .wrapper2 .social-holder{
     }
 
     .coupons-holder {
-        gap: 0 20px;
         margin-top: 0;
-        overflow: auto;
-        scroll-snap-type: x mandatory;
+        overflow: hidden;
+        /* overflow: auto;
+
+        scroll-snap-type: x mandatory; */
         margin-bottom: 60px;
     }    
-    
+    .glide__slide{
+        display: flex;
+        justify-content: center;
+    }
     .coupons-holder .cards{
         border: 1px solid #d1d1d1;
         flex: 0 0 100%;
-        scroll-snap-align: start;
+        /* scroll-snap-align: start; */
         max-width: 424px;
     }
     /* Add a little margin between cards for better visual separation */
@@ -1573,7 +1586,7 @@ footer .wrapper2 .social-holder{
 
 /* Medium devices (laptops, desktops) */
 @media (min-width: 768px) and (max-width: 991px) {
-    .coupons-holder {
+    .coupons-holder-slider {
         gap: 0 20px;
     }    
     
@@ -1675,7 +1688,7 @@ footer .wrapper2 .social-holder{
 
 /* Large devices (large desktops) */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .coupons-holder {
+    .coupons-holder-slider {
         gap: 0 30px;
     }    
     .sneak-peak .wrapper2 .sneak-peak-cards .text-card h2{
@@ -1757,7 +1770,7 @@ footer .wrapper2 .social-holder{
 
 /* Extra Large devices (extra large desktops) */
 @media (min-width: 1200px) {
-    .coupons-holder {
+    .coupons-holder-slider {
         gap: 0 30px;
     }
     .sneak-peak .wrapper2 .sneak-peak-cards .text-card h2{

@@ -1,116 +1,137 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Image paths
-    const imagePaths = [
-        "img/gallery1.webp",
-        "img/gallery2.webp",
-        "img/gallery3.webp",
-        "img/gallery4.webp"
-    ];
+    const glide = new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1,
+        autoplay: 3000,
+        hoverpause: true,
+        animationTimingFunc: 'ease-in-out',
+        gap: 0,
+        rewind: true  // Set rewind to true for infinite loop
+    });
 
-    // Get the image slider container
-    const imageSlider = document.getElementById("imageSlider1");
+    glide.mount();
 
-    // Index to keep track of the current image
-    let currentIndex = 0;
+    document.getElementById('prevBtnBooking').addEventListener('click', function () {
+        glide.go('<');
+    });
 
-    // Function to show the current image
-    function showImage() {
-        imageSlider.innerHTML = "";
-
-        // Create and append img elements
-        imagePaths.forEach((path, index) => {
-            const imgElement = document.createElement("img");
-            imgElement.src = path;
-            imgElement.alt = `Slide Image ${index + 1}`;
-            imageSlider.appendChild(imgElement);
-        });
-
-        // Update transform property
-        imageSlider.style.transform = `translateX(${-currentIndex * 100}%)`;
-    }
-
-    // Function to move to the next image
-    function nextImage() {
-        if (currentIndex === imagePaths.length - 1) {
-            currentIndex = 0;
-        } else {
-            currentIndex++;
-        }
-        showImage();
-    }
-
-    // Function to move to the previous image
-    function prevImage() {
-        if (currentIndex === 0) {
-            currentIndex = imagePaths.length - 1;
-        } else {
-            currentIndex--;
-        }
-        showImage();
-    }
-
-    // Set up initial image
-    showImage();
-
-    // Set up interval to change image every 4 seconds
-    var slideInterval = setInterval(nextImage, 4000);
-
-    // Event listeners for arrow buttons
-    const leftArrow = document.getElementById("prevBtnBooking");
-    leftArrow.addEventListener("click", prevImage);
-
-    const rightArrow = document.getElementById("nextBtnBooking");
-    rightArrow.addEventListener("click", nextImage);
-
-    // Pause interval on hover and resume on mouseout
-    imageSlider.addEventListener("mouseover", () => clearInterval(slideInterval));
-    imageSlider.addEventListener("mouseout", () => slideInterval = setInterval(nextImage, 4000));
+    document.getElementById('nextBtnBooking').addEventListener('click', function () {
+        glide.go('>');
+    });
 });
+
+let glideInitialized = false;
+
+function setupGlide() {
+    if (!glideInitialized) {
+        new Glide('.glide2', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 1,
+            rewind: true,
+            gap: 20,
+        }).mount();
+        glideInitialized = true;
+    }
+}
+
+function destroyGlide() {
+    if (glideInitialized) {
+        const glideInstance = document.querySelector('.glide2').__glide__;
+        if (glideInstance) {
+            glideInstance.destroy();
+        }
+        glideInitialized = false;
+        updateCouponsHolder();
+    }
+}
+
+function checkViewportWidth() {
+    const viewportWidth = window.innerWidth;
+    if (viewportWidth <= 767) {
+        setupGlide();
+    } else {
+        destroyGlide();
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-    const couponsHolder = document.getElementById("couponsHolder");
-
-    function setupInfiniteScroll() {
-        const cards = couponsHolder.querySelectorAll(".cards");
-        const cardArray = Array.from(cards);
-        const cardWidth = cardArray[0].offsetWidth;
-
-        // Calculate the total width needed for infinite scrolling
-        const totalWidth = cardArray.length * cardWidth;
-
-        // Clone the cards for infinite scrolling
-        cardArray.forEach((card, index) => {
-            const clone = card.cloneNode(true);
-            couponsHolder.appendChild(clone);
-        });
-
-        // Function to move cards on scroll
-        function moveCards() {
-            let scrollLeft = couponsHolder.scrollLeft;
-
-            // Check if user has scrolled past the total width
-            if (scrollLeft >= totalWidth) {
-                // Calculate the new scroll position after cycling
-                const newScrollLeft = scrollLeft - totalWidth;
-                
-                // Set the new scroll position without animation
-                couponsHolder.scrollLeft = newScrollLeft;
-            }
-        }
-
-        // Set up event listener for scroll
-        couponsHolder.addEventListener("scroll", moveCards);
-    }
-
-    // Check viewport width and apply infinite scroll only for the specified range
-    function checkViewportWidth() {
-        const viewportWidth = window.innerWidth;
-        if (viewportWidth <= 767) {
-            setupInfiniteScroll();
-        }
-    }
-
-    // Call the function initially and add a resize event listener
     checkViewportWidth();
-    window.addEventListener("resize", checkViewportWidth);
+
+    // Listen for window resize events
+    window.addEventListener("resize", function () {
+        checkViewportWidth();
+    });
 });
+
+
+function updateCouponsHolder() {
+    const couponsHolder = document.getElementById('couponsHolder');
+    
+    // Replace the contents of couponsHolder with the Glide slides
+    couponsHolder.innerHTML = `
+    <div class="glide2">
+    <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides coupons-holder-slider">
+            <div class="glide__slide">
+                <div class="cards">
+                    <div class="text-holder">
+                        <p>Group of 10</p>
+                        <h2>20% OFF</h2>
+                        <a href="#booking-section">
+                            <button class="btn-primary  ">BOOK NOW</button>
+                        </a>
+                    </div>
+                    <div class="img-holder">
+                        <img src="img/coupon4.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="glide__slide">
+                <div class="cards">
+                    <div class="text-holder">
+                        <p>Group of 5</p>
+                        <h2>10% OFF</h2>
+                        <a href="#booking-section">
+                            <button class="btn-primary  ">BOOK NOW</button>
+                        </a>
+                    </div>
+                    <div class="img-holder">
+                        <img src="img/group-of-5.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="glide__slide">
+                <div class="cards">
+                    <div class="text-holder">
+                        <p>Group of 3</p>
+                        <h2>10% OFF</h2>
+                        <a href="#booking-section">
+                            <button class="btn-primary  ">BOOK NOW</button>
+                        </a>
+                    </div>
+                    <div class="img-holder">
+                        <img src="img/group-of-3.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="glide__slide">
+                <div class="cards">
+                    <div class="text-holder">
+                        <p>Single ticket</p>
+                        <h2>5% OFF</h2>
+                        <a href="#booking-section">
+                            <button class="btn-primary  ">BOOK NOW</button>
+                        </a>
+                    </div>
+                    <div class="img-holder">
+                        <img src="img/coupon1.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    `;
+}

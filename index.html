@@ -63,60 +63,69 @@
 
 
         <section class="coupons-holder wrapper2" id="couponsHolder">
-
-            <div class="cards">
-                <div class="text-holder">
-                    <p>Group of 10</p>
-                    <h2>20% OFF</h2>
-                    <a href="#booking-section">
-
-                        <button class="btn-primary  ">BOOK NOW</button>
-                    </a>
-                </div>
-                <div class="img-holder">
-                    <img src="img/coupon4.webp" alt="">
+            <div class="glide2">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides coupons-holder-slider">
+                        <div class="glide__slide">
+                            <div class="cards">
+                                <div class="text-holder">
+                                    <p>Group of 10</p>
+                                    <h2>20% OFF</h2>
+                                    <a href="#booking-section">
+                                        <button class="btn-primary  ">BOOK NOW</button>
+                                    </a>
+                                </div>
+                                <div class="img-holder">
+                                    <img src="img/coupon4.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glide__slide">
+                            <div class="cards">
+                                <div class="text-holder">
+                                    <p>Group of 5</p>
+                                    <h2>10% OFF</h2>
+                                    <a href="#booking-section">
+                                        <button class="btn-primary  ">BOOK NOW</button>
+                                    </a>
+                                </div>
+                                <div class="img-holder">
+                                    <img src="img/group-of-5.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glide__slide">
+                            <div class="cards">
+                                <div class="text-holder">
+                                    <p>Group of 3</p>
+                                    <h2>10% OFF</h2>
+                                    <a href="#booking-section">
+                                        <button class="btn-primary  ">BOOK NOW</button>
+                                    </a>
+                                </div>
+                                <div class="img-holder">
+                                    <img src="img/group-of-3.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glide__slide">
+                            <div class="cards">
+                                <div class="text-holder">
+                                    <p>Single ticket</p>
+                                    <h2>5% OFF</h2>
+                                    <a href="#booking-section">
+                                        <button class="btn-primary  ">BOOK NOW</button>
+                                    </a>
+                                </div>
+                                <div class="img-holder">
+                                    <img src="img/coupon1.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="cards">
-                <div class="text-holder">
-                    <p>Group of 5</p>
-                    <h2>10% OFF</h2>
-                    <a href="#booking-section">
-                        
-                        <button class="btn-primary  ">BOOK NOW</button>
-                    </a>
-                </div>
-                <div class="img-holder">
-                    <img src="img/group-of-5.webp" alt="">
-                </div>
-            </div>
-            <div class="cards">
-                <div class="text-holder">
-                    <p>Group of 3</p>
-                    <h2>10% OFF</h2>
-                    <a href="#booking-section">
-                        
-                        <button class="btn-primary  ">BOOK NOW</button>
-                    </a>
-                </div>
-                <div class="img-holder">
-                    <img src="img/group-of-3.webp" alt="">
-                </div>
-            </div>
-            <div class="cards">
-                <div class="text-holder">
-                    <p>Single ticekt</p>
-                    <h2>5% OFF</h2>
-                    <a href="#booking-section">
-                        
-                        <button class="btn-primary  ">BOOK NOW</button>
-                    </a>
-                </div>
-                <div class="img-holder">
-                    <img src="img/coupon1.webp" alt="">
-                </div>
-            </div>
-
+    
         </section>
 
         <section class="booking-section" id="booking-section">
@@ -126,15 +135,31 @@
                         <h1>BUY TICKET ONLINE</h1>
                     </div>
                     <div class="img-form-holder">
-                        <div class="img-holder" >
+                        <div class="img-holder glide" >
                             <div id="imageSlider1">
-
+                                <div class="glide__track" data-glide-el="track">
+                                    <div class="glide__slides" id="imageSlider1">
+                                        <div class="glide__slide">
+                                            <img src="img/gallery1.webp" alt="Slide Image 1">
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/gallery2.webp" alt="Slide Image 2">
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/gallery3.webp" alt="Slide Image 3">
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/gallery4.webp" alt="Slide Image 4">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="btn-holder">
                                 <a id="prevBtnBooking">&lt;</a>
                                 <a id="nextBtnBooking">&gt;</a>
                             </div>
                         </div>
+                        
                         <div class="form-holder">
                             <form>
                                 <label for="center">Select Center*</label><br>
@@ -153,13 +178,11 @@
                                 </select><br>
                                 <label for="slot">Select Slot*</label><br>
 
-                                <label class="radio-label" for="slot30">
-                                    <input class="radio-slot" type="radio" name="slot" id="slot30" value="30"> 30 mins
-                                </label>
+                            <input class="radio-slot" type="radio" name="slot" id="slot30" value="30">
+                            <label class="radio-label" for="slot30">30 mins</label>
 
-                                <label class="radio-label" for="slot60">
-                                    <input class="radio-slot" type="radio" name="slot" id="slot60" value="60"> 60 mins
-                                </label>
+                            <input class="radio-slot" type="radio" name="slot" id="slot60" value="60">
+                            <label class="radio-label" for="slot60">60 mins</label>
 
                                 <br>
 
@@ -458,6 +481,7 @@
         });
     </script>
 <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
 </body>
 
 </html>
