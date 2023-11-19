@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hoverpause: true,
         animationTimingFunc: 'ease-in-out',
         gap: 0,
-        rewind: true  // Set rewind to true for infinite loop
+        rewind: true  
     });
 
     glide.mount();
@@ -59,7 +59,6 @@ function checkViewportWidth() {
 document.addEventListener("DOMContentLoaded", function () {
     checkViewportWidth();
 
-    // Listen for window resize events
     window.addEventListener("resize", function () {
         checkViewportWidth();
     });
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function updateCouponsHolder() {
     const couponsHolder = document.getElementById('couponsHolder');
     
-    // Replace the contents of couponsHolder with the Glide slides
+   
     couponsHolder.innerHTML = `
     <div class="glide2">
     <div class="glide__track" data-glide-el="track">
@@ -139,7 +138,6 @@ function updateCouponsHolder() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Get all elements with the "testimonial-stars" class
     const testimonialStarsElements = document.querySelectorAll('.testimonial-stars');
 
     // SVG markup
@@ -168,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </svg>
     `;
 
-    // Insert the SVG into each element with the "testimonial-stars" class
     testimonialStarsElements.forEach((element) => {
         element.innerHTML = starsSVG;
     });
@@ -183,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         focusAt: 'center',
         rewind: true,
         gap: 30,
-        autoplay: 5000, // Set the autoplay interval in milliseconds (5 seconds in this example)
+        autoplay: 5000, 
         breakpoints: {
             767: {
                 perView: 2,
@@ -197,12 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// start map function
 var enquiryScriptURL = 'https://script.google.com/macros/s/AKfycbwk3w77lzqvXf-DJHAzIr7ff7eHLw6R0WubhqETxLAX0-CbBbvQGd3FtOjdnR0pgNyGKg/exec';
 
 
 function submitForm(form, successMessage, googeScriptURL) {
-    // Add current date and time to the form data
     var formData = new FormData(form);
     var currentDate = new Date();
     formData.append('TimeStamp', currentDate.toLocaleString());
@@ -297,7 +292,6 @@ function setupFormValidation(form, scriptURL, successMessage) {
     });
 }
 
-// Example usage for form1
 var form1 = document.getElementById('enq-form');
 if (form1) {
     setupFormValidation(form1, enquiryScriptURL, 'Thank you! Your enquiry request has been sent successfully.');

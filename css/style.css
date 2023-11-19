@@ -199,9 +199,7 @@ header {
 }
 .scroller span{
     white-space: nowrap;
-    /* Prevent text from wrapping */
     animation: slide 50s linear infinite;
-    /* Adjust the duration and timing function as needed */
 }
 
 @keyframes slide {
@@ -308,9 +306,7 @@ nav .btn-holder a {
     width: 100%;
     height: 100%;
     background: rgba(128, 0, 128, 0.5);
-    /* Purple tint color with 50% opacity */
     z-index: 0;
-    /* Place the overlay behind the video */
 }
 
 /* css for coupon cards */
@@ -1017,9 +1013,7 @@ footer .wrapper2 .social-holder{
         width: 100%;
         height: 100%;
         background: linear-gradient(360deg, #761ACA82 0%, rgba(118, 26, 202, 0.01) 100%);
-        /* Purple tint color with 50% opacity */
         z-index: 9;
-        /* Place the overlay behind the video */
     }
 
     .coupons-holder {
@@ -1037,7 +1031,6 @@ footer .wrapper2 .social-holder{
         max-width: 424px;
         margin-bottom: 30px;
     }
-    /* Add a little margin between cards for better visual separation */
     /* .coupons-holder .cards:not(:last-child) {
     margin-right: 10px;
 } */
@@ -1360,9 +1353,7 @@ footer .wrapper2 .social-holder{
         width: 100%;
         height: 100%;
         background: linear-gradient(360deg, #761ACA82 0%, rgba(118, 26, 202, 0.01) 100%);
-        /* Purple tint color with 50% opacity */
         z-index: 9;
-        /* Place the overlay behind the video */
     }
 
     .coupons-holder {
@@ -1383,7 +1374,6 @@ footer .wrapper2 .social-holder{
         /* scroll-snap-align: start; */
         max-width: 424px;
     }
-    /* Add a little margin between cards for better visual separation */
     /* .coupons-holder .cards:not(:last-child) {
     margin-right: 10px;
 } */
