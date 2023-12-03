@@ -25,6 +25,7 @@ View the live demo [here](https://abkrishna.me/SkyJumper-Clone/).
 *Full page screenshot of tablet view.*
 
 ![mobile view](screenshots/Screenshot_5.png)
+
 *Full page screenshot of mobile view.*
 
 ## Technologies Used 🛠️
