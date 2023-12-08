@@ -1826,3 +1826,128 @@ footer .wrapper2 .social-holder{
         border-radius: 6px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== css for new setion ==== */
+
+
+.wrapper2 {
+    max-width: 1280px;
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+.trampoline-park-laser{
+    height: 400px;
+}
+.trampoline-park-laser .cards-holder{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.trampoline-park-laser .cards-holder .card{
+    max-height: 282px;
+    border-radius: 15px;
+}
+.trampoline-park-laser .cards-holder .card .top{
+    height: 85px;
+    background-color: #fff;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 15px 0 0;
+}
+.trampoline-park-laser .cards-holder .card .bottom{
+    border-radius: 0 0 15px 15px;
+    height: 197px;
+    width: 100%;
+}
+.trampoline-park-laser .cards-holder .card .bottom{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 24px 23px;
+    font-weight: bold;
+}
+.trampoline-park-laser .cards-holder .days .bottom .hd p{
+    visibility: hidden;
+}
+.trampoline-park-laser .cards-holder .card .bottom .hd{
+    font-size: 20px;
+    line-height: 24px;
+}
+.trampoline-park-laser .cards-holder .card .bottom .sd{
+    font-size: 25px;
+    line-height: 30px;
+}
+.trampoline-park-laser .cards-holder .card .bottom .row{
+    display: flex;
+    column-gap: 46px;
+    border-bottom: 1px solid #fff;
+    justify-content: center;
+    padding: 12px 0;
+}
+.trampoline-park-laser .cards-holder .card .bottom .row:nth-child(3){
+    border-bottom: none;
+}
+.trampoline-park-laser .cards-holder .days{
+    width: 193px;
+}
+.trampoline-park-laser .cards-holder .widecard{
+    width: 320px;
+}
+.trampoline-park-laser .cards-holder .days .bottom .hd{
+    border-bottom: none;
+}
+
+@media (max-width: 591px){
+    .wrapper2 {
+        width: 1280px;
+        max-width: 100%;
+        padding: 0 12px;
+        margin: 0 auto;
+    }
+    .trampoline-park-laser .cards-holder .card{
+        margin-right: 12px;
+    }
+
+}
+
+/* === COLORED DIVISIONS === */
+
+
+.box-orange{
+    background-color: #F7901E;
+}
+.box-skyblue{
+    background-color: #3D9BE9;
+}
+
+/* === COLORED DIVISIONS === */
+
+
+/* ==== css end for new setion ==== */
