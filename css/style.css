@@ -2289,22 +2289,22 @@ footer .wrapper2 .social-holder{
 .blog-side-bar-holder .recent-blogs-links ul li:hover i{
     margin-right: 8px;
 }
-.blog-side-bar-holder .tags-card-holder {
+.blogs-holder .tags-card-holder {
     margin-top: 15px;
 }
-.blog-side-bar-holder .tags-card-holder ul{
+.blogs-holder .tags-card-holder ul{
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
-.blog-side-bar-holder .tags-card-holder li{
+.blogs-holder .tags-card-holder li{
     list-style-type: none;
     cursor: pointer;
     border: 1px solid #00000024;
     background-color: #fcfcfc;
     border-radius: 4px;
 }
-.blog-side-bar-holder .tags-card-holder li a{
+.blogs-holder .tags-card-holder li a{
     display: inline;
     padding: 2px 5px;
     font-size: 14px;
@@ -2313,7 +2313,7 @@ footer .wrapper2 .social-holder{
     font-weight: 300;
     height: 100%;
 }
-.blog-side-bar-holder .tags-card-holder li:hover, .blog-side-bar-holder .tags-card-holder li a:hover{
+.blogs-holder .tags-card-holder li:hover, .blogs-holder .tags-card-holder li a:hover{
     color: #fcfcfc;
     background-color: #000;
 }
@@ -2330,7 +2330,6 @@ footer .wrapper2 .social-holder{
     }
     .blogs-holder .wrapper2{
         flex-direction: column;
-        align-items: center;
     }
     .blog-card-holder .blog-card{
         flex-direction: column;
@@ -2402,17 +2401,99 @@ footer .wrapper2 .social-holder{
 /* ** sub css for blog post page ** */
 
 .blogs-holder .post-holder{
-    background-color: red;
-    height: 700px;
+    padding: 15px;
+}
+.blogs-holder .post-holder .heading{
+    margin-bottom: 10px;
+}
+
+.blogs-holder .post-holder .heading h2{
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 32px;
 }
 
 
 
+.blogs-holder .post-holder .metadata{
+    display: flex;
+    column-gap: 20px;
+
+}
+.blogs-holder .post-holder hr{  
+    margin: 5px 0 10px 0;
+    border: 1px solid #ececec;
+}
+.blogs-holder .post-holder .metadata i,
+.blogs-holder .post-holder .metadata p {
+    display: inline;
+    font-size: 14px;
+}
+.blogs-holder .post-holder .metadata p{
+    margin-left: 5px;
+}
+
+.blogs-holder .post-holder .img-holder{
+    margin-top: 22px;
+    margin-bottom: 22px;
+    max-height: 450px;
+    height: 450px;
+}
+.blogs-holder .post-holder .img-holder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogs-holder .post-holder .social-holder{
+    margin-top: 30px;
+}
+.blogs-holder .post-holder .social-holder .social-icons{
+    display: flex;
+    align-items: center;
+}
+.blogs-holder .post-holder .social-holder .social-icons a{
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+}
+.blogs-holder .post-holder .social-holder .social-icons a:nth-child(1){
+    margin-left: 10px;
+}
+.blogs-holder .post-holder .cat-tag-holder{
+    margin-top: 20px;
+    display: flex;
+}
+.blogs-holder .post-holder .cat-tag-holder .category-holder{
+    max-width: 50%;
+    width: 50%;
+    font-size: 16px;
+}
+.blogs-holder .post-holder .cat-tag-holder .category-holder a{
+    text-decoration: none;
+    color: #000;
+}
+.blogs-holder .post-holder .cat-tag-holder .tag-holder{
+    display: flex;
+    gap: 5px;
+}
+
+.blogs-holder .post-holder .tags-card-holder {
+    margin-top: 0px;
+}
 
 
-
-
-
+@media (max-width: 599px){
+    .blogs-holder .post-holder .cat-tag-holder .category-holder{
+        width: auto;
+    }
+    .blogs-holder .tags-card-holder ul{
+        gap: 5px;
+    }
+    .blogs-holder .post-holder .img-holder{
+        height: 220px;
+    }
+}
 
 /* ** sub css end for blog post page ** */
 
