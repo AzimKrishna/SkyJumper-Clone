@@ -2098,7 +2098,7 @@ footer .wrapper2 .social-holder{
     color: white;
     position: relative;
 }
-.blog-hero .hero-text h2{
+.blog-hero .hero-text h1{
     font-size: 45px;
     font-weight: 500;
 }
@@ -2175,7 +2175,7 @@ footer .wrapper2 .social-holder{
     position: relative;
 }
 
-.blog-card-holder .blog-card .text-holder .heading{
+.blog-card-holder .blog-card .text-holder .heading h4{
     font-size: 20px;
     font-weight: 600;
 }
@@ -2320,7 +2320,7 @@ footer .wrapper2 .social-holder{
 
 
 @media (max-width: 599px){
-    .blog-hero .hero-text h2{
+    .blog-hero .hero-text h1{
         font-size: 36px;
         font-weight: 500;
     }
@@ -2399,9 +2399,21 @@ footer .wrapper2 .social-holder{
 
 
 
+/* ** sub css for blog post page ** */
+
+.blogs-holder .post-holder{
+    background-color: red;
+    height: 700px;
+}
 
 
 
 
+
+
+
+
+
+/* ** sub css end for blog post page ** */
 
 /* === css end for blog page === */
