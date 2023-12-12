@@ -1880,6 +1880,9 @@ footer .wrapper2 .social-holder{
     justify-content: center;
     border-radius: 15px 15px 0 0;
 }
+.trampoline-park-laser .cards-holder .card .top h4{
+    text-align: center;
+}
 .trampoline-park-laser .cards-holder .card .bottom{
     border-radius: 0 0 15px 15px;
     height: 197px;
@@ -1909,6 +1912,9 @@ footer .wrapper2 .social-holder{
     border-bottom: 1px solid #fff;
     justify-content: center;
     padding: 12px 0;
+}
+.trampoline-park-laser .cards-holder .genz .bottom .row:nth-child(1){
+    border-bottom: none;
 }
 .trampoline-park-laser .cards-holder .card .bottom .row:nth-child(3){
     border-bottom: none;
