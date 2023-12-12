@@ -2506,3 +2506,118 @@ footer .wrapper2 .social-holder{
 /* ** sub css end for blog post page ** */
 
 /* === css end for blog page === */
+
+
+
+/* === css start for calender section === */
+
+.calender{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.calender .wrapper2{
+    height: 100%;
+}
+.calender .calender-holder{
+    height: 100%;
+}
+.calender .calender-holder .days-holder{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.calender .calender-holder .days-holder button{
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #00000053;
+    margin-left: 15px;
+    max-height: 40px;
+    border: 0px none;
+    color: #fff;
+}
+.calender .calender-holder .days-holder button:nth-child(1){
+    background-color: #FF1717;
+}
+.calender .calender-holder .days-holder button:nth-child(2){
+    background-color: #000000;
+}
+
+.calender .calender-holder .days-holder button:nth-child(3){
+    background-color: #d2cf0b;
+}
+.calender .calender-holder .calender-card  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calender .calender-holder .calender-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  .calender .calender-holder  .calender-card-holder{
+    position: relative;
+  }
+  .calender .calender-holder  .calender-card-holder .card-holder{
+    margin: 0 60px;
+  }
+  .calender .calender-holder .calender-card th, .calender .calender-holder .calender-card td {
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+  }
+  .calender .calender-holder .calender-card th{
+    background-color: #f2f2f2;
+  }
+  .calender .calender-holder .calender-card caption {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .calender .calender-holder .calender-card .special-day{
+    color: red;
+  }
+
+/* Styles for custom Slick arrows */
+.calender .calender-holder .slick-prev,
+.calender .calender-holder .slick-next {
+    font-size: 2.5rem;
+  line-height: 1;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-weight: 400;
+  text-shadow: 0 0 5px #00000096;
+  cursor: pointer;
+  color: #F0852D;
+}
+
+.calender .calender-holder .slick-prev {
+  left: 10px;
+}
+
+.calender .calender-holder .slick-next {
+  right: 10px;
+}
+@media (max-width: 599px) {
+    .calender .calender-holder .calender-card th, .calender .calender-holder .calender-card td {
+        padding: 8px;
+      }
+    .calender .calender-holder .days-holder{
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    .calender .calender-holder .days-holder button{
+        margin-left: 0px;
+    }
+}
+
+/* === css end for calender section === */
